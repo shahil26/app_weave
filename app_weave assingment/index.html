@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="#" class="logo">MyEcommerce</a>
+      <div class="right">
+        <a href="#" class="left">Products</a>
+        <input type="text" placeholder="Search..." class="left" />
+        <!-- <a href="#cart-display" id="cart-logo" class="left"
+          ><img src="cart.png" alt="Cart"
+        /></a> -->
+      </div>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="row-container">
+          <div class="filter" id="filter">
+            <h5 class="filter-h">Filters</h5>
+            <form id="filter-form">
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" id="gender">
+                  <option value="">All</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="color">Color</label>
+                <select class="form-control" id="color">
+                  <option value="">All</option>
+                  <option value="red">Red</option>
+                  <option value="blue">Blue</option>
+                  <option value="green">Green</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="type">Type</label>
+                <select class="form-control" id="type">
+                  <option value="">All</option>
+                  <option value="polo">Polo</option>
+                  <option value="v-neck">V-Neck</option>
+                  <option value="round-neck">Round Neck</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="price">Price Range</label>
+                <select class="form-control" id="price">
+                  <option value="">All</option>
+                  <option value="0-15">$0 - $15</option>
+                  <option value="15-25">$15 - $25</option>
+                  <option value="25-50">$25 - $50</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="cart" id="mycart">
+            <h5 class="filter-h">My Cart</h5>
+            <img src="cart.png" alt="" />
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="row" id="product-list">
+            <!-- Product cards with data attributes for filtering -->
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="male"
+                data-color="red"
+                data-type="polo"
+                data-price="20"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 1" />
+                <div class="card-body">
+                  <h5 class="card-title">Red Polo</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$20</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="female"
+                data-color="blue"
+                data-type="v-neck"
+                data-price="30"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 2" />
+                <div class="card-body">
+                  <h5 class="card-title">Blue V-Neck</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$30</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="male"
+                data-color="green"
+                data-type="round-neck"
+                data-price="25"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 3" />
+                <div class="card-body">
+                  <h5 class="card-title">Green Round Neck</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$25</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="female"
+                data-color="red"
+                data-type="polo"
+                data-price="20"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 4" />
+                <div class="card-body">
+                  <h5 class="card-title">Red Polo Female</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$20</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="male"
+                data-color="blue"
+                data-type="v-neck"
+                data-price="30"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 5" />
+                <div class="card-body">
+                  <h5 class="card-title">Blue V-Neck Male</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$30</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="female"
+                data-color="green"
+                data-type="round-neck"
+                data-price="25"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 6" />
+                <div class="card-body">
+                  <h5 class="card-title">Green Round Neck Female</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$25</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="male"
+                data-color="red"
+                data-type="round-neck"
+                data-price="15"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 7" />
+                <div class="card-body">
+                  <h5 class="card-title">Red Round Neck</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$15</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="female"
+                data-color="blue"
+                data-type="polo"
+                data-price="35"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 8" />
+                <div class="card-body">
+                  <h5 class="card-title">Blue Polo Female</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$35</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="male"
+                data-color="green"
+                data-type="v-neck"
+                data-price="40"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 9" />
+                <div class="card-body">
+                  <h5 class="card-title">Green V-Neck Male</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$40</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="male"
+                data-color="red"
+                data-type="polo"
+                data-price="20"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 1" />
+                <div class="card-body">
+                  <h5 class="card-title">Red Polo</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$20</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="female"
+                data-color="blue"
+                data-type="v-neck"
+                data-price="30"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 2" />
+                <div class="card-body">
+                  <h5 class="card-title">Blue V-Neck</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$30</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="male"
+                data-color="green"
+                data-type="round-neck"
+                data-price="25"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 3" />
+                <div class="card-body">
+                  <h5 class="card-title">Green Round Neck</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$25</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="female"
+                data-color="red"
+                data-type="polo"
+                data-price="20"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 4" />
+                <div class="card-body">
+                  <h5 class="card-title">Red Polo Female</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$20</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="male"
+                data-color="blue"
+                data-type="v-neck"
+                data-price="30"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 5" />
+                <div class="card-body">
+                  <h5 class="card-title">Blue V-Neck Male</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$30</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="female"
+                data-color="green"
+                data-type="round-neck"
+                data-price="25"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 6" />
+                <div class="card-body">
+                  <h5 class="card-title">Green Round Neck Female</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$25</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="male"
+                data-color="red"
+                data-type="round-neck"
+                data-price="15"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 7" />
+                <div class="card-body">
+                  <h5 class="card-title">Red Round Neck</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$15</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="female"
+                data-color="blue"
+                data-type="polo"
+                data-price="35"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 8" />
+                <div class="card-body">
+                  <h5 class="card-title">Blue Polo Female</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$35</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div
+                class="card product-card"
+                data-gender="male"
+                data-color="green"
+                data-type="v-neck"
+                data-price="40"
+              >
+                <img src="tshirt.jpg" class="card-img-top" alt="Product 9" />
+                <div class="card-body">
+                  <h5 class="card-title">Green V-Neck Male</h5>
+                  <div
+                    class="card-text d-flex justify-content-between align-items-center"
+                  >
+                    <p>$40</p>
+                    <button class="btn btn-primary addToCartBtn">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Add more product cards with appropriate data attributes -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-wrapper hidden" id="cart-display">
+      <div class="cart-container">
+        <h5 class="filter-h">My Cart</h5>
+        <div class="cart-items" id="cart-items">
+          <!-- Cart items will be inserted here dynamically -->
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody class="cart-table-body"></tbody>
+          </table>
+        </div>
+        <div class="cart-total">
+          <h5>Total: $<span id="cart-total">0</span></h5>
+          <button class="btn btn-primary">Checkout</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
